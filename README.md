@@ -64,13 +64,28 @@ CONTENTS
 2.4.3.	Server	7
 2.5.	APPLICATION PROGRAMMING INTERFACE (API)	8
 2.6.	DEBUGGING	8
-3.	DEPENDENCIES	9
-3.1.	API DOCUMENTATION	9
-3.2.	LEAFLET API:	9
-3.3.	INTERFACE	9
-4.	CONSTRAINTS	9
+2.6.1.	GeoQuiz Mobile	9
+2.6.2.	GeoQuiz Web	11
+2.6.3.	Server	13
+2.7.	TESTING & IMPLEMENTATION	13
+3.	DEPENDENCIES	14
+3.1.	API DOCUMENTATION	14
+3.2.	LEAFLET API:	14
+3.3.	INTERFACE	14
+4.	CONSTRAINTS	14
 
 
+FIGURES
+
+FIGURE 1: PHONE-BROWSER DEBUGGING: SUCCESSFUL LOAD OF POIS	9
+FIGURE 2: PHONE-BROWSER DEBUGGING: SUCCESSFUL LOAD OF MENU BAR	9
+FIGURE 3:  PHONE-BROWSER DEBUGGING: SUCCESSFUL TRACK OF USER'S LOCATION	10
+FIGURE 4: PHONE-BROWSER DEBUGGING: SUCCESSFUL START OF THE QUIZ	10
+FIGURE 5: PHONE-BROWSER DEBUGGING: SUCCESSFUL LOAD OF USER GUIDE	11
+FIGURE 6: CONSOLE-BROWSER DEBUGGING: SUCCESSFUL LOAD OF THE MAP AND THE MENU BAR	11
+FIGURE 7:CONSOLE-BROWSER DEBUGGING: SUCCESSFUL BROWSING OF THE FORM	12
+FIGURE 8: CONSOLE-BROWSER DEBUGGING: SUCCESSFUL LOAD OF THE USER GUIDE	12
+FIGURE 9: TERMINAL-SERVER DEBUGGING: SUCCESSFUL "GET" REQUEST OF POIS	13
 
  
 1.	Business Requirements
@@ -83,7 +98,7 @@ GeoQuiz is a location-based quiz application designed to set riddles regarding U
 
 GeoQuiz functionality is based on three (3) elemental parts: 
 
-i.	GeoQuiz Mobile: The main purpose of this application is to implement the quiz around UCL campus. It is the final product that is implemented by the end-user(client) on their mobile device. The application is composed of a basemap provided by Leaflet (Leaflet) on which the user’s location is being tracked every 15 seconds, utilizing the Geolocation capabilities. The Points of Interest (PoI), for the purposes of this project are four, but the structure of the system supports the addition of more PoIs according to the administrator’s decision. The implemented PoIs are: (i) Cruciform Building, (ii) St. Lewis building, (iii) Anatomy Building and (iv) Roberts Building. The PoIs are automatically loaded when GeoQuiz Mobile starts and appear as blue markers. As soon as the user selects the option to “Start Geolocation”, its position on the map is tracked and appears as a red marker. When the distance between their position and the PoIs is less than 100 m., the user can begin the quiz and the question related to the closest PoI will appear in the bottom of the screen. The user selects one of the four possible answers and the system returns a message showing whether the answer is correct or not. Lastly, the answers are saved and uploaded to the database, alongside with user’s device id. The interface of the application is based on Google’s Material Design Template and the application is deployed via PhoneGap and currently supports only Android devices. 
+i.	GeoQuiz Mobile: The main purpose of this application is to implement the quiz around UCL campus. It is the final product that is implemented by the end-user(client) on their mobile device. The application is composed of a basemap provided by Leaflet (https://leafletjs.com ) on which the user’s location is being tracked every 15 seconds, utilizing the Geolocation capabilities (https://developers.google.com/maps/documentation/javascript/examples/map-geolocation ). The Points of Interest (PoI), for the purposes of this project are four, but the structure of the system supports the addition of more PoIs according to the administrator’s decision. The implemented PoIs are: (i) Cruciform Building, (ii) St. Lewis building, (iii) Anatomy Building and (iv) Roberts Building. The PoIs are automatically loaded when GeoQuiz Mobile starts and appear as blue markers. As soon as the user selects the option to “Start Geolocation”, its position on the map is tracked and appears as a red marker. When the distance between their position and the PoIs is less than 100 m., the user can begin the quiz and the question related to the closest PoI will appear in the bottom of the screen. The user selects one of the four possible answers and the system returns a message showing whether the answer is correct or not. Lastly, the answers are saved and uploaded to the database, alongside with user’s device id. The interface of the application is based on Google’s Material Design Template (https://material.io/guidelines/ ) and the application is deployed via PhoneGap (https://phonegap.com ) and currently supports only Android devices. 
 
 ii.	GeoQuiz Web: The main purpose of this browser-based application is to provide the administrator with tools to maintain and enrich the GeoQuiz mobile application. Specifically, the background is provided by Leaflet API, similarly with GeoQuiz Mobile and is centered around UCL Campus. The administrator is able to navigate over the map and select a UCL Building in order to add a relevant question, since by clicking on the point, its coordinates are automatically returned. Afterwards, the administrator can fill a form which contains the following information:
 
@@ -157,26 +172,22 @@ iv.	PostgreSQL Database (with PostGIS extension): The database responsible to st
 
 2.2.	Supported Platforms & Operating System Versions
 
-GeoQuiz is built via PhoneGap (https://phonegap.com ) and currently supports Android smartphones that their system version is 6.1.2 or more. For detailed information about PhoneGap and supported operating system versions follow this link: https://build.phonegap.com/current-support .
+GeoQuiz is built via PhoneGap and currently supports Android smartphones that their system version is 6.1.2 or more. For detailed information about PhoneGap and supported operating system versions follow this link: https://build.phonegap.com/current-support .
 
 2.3.	Services, Servers & Databases
 
-GeoQuiz is deployed as a mobile application utilizing PhoneGap services (https://phonegap.com ). Three servers are in operation:
+GeoQuiz is deployed as a mobile application utilizing PhoneGap services (https://phonegap.com ). The server that is responsible to upload data from the Web application and deploy them in the mobile application is located in UCL. 
 
-•	The server that is responsible to upload data from the Web application and deploy them in the mobile application is located in UCL. It is responsible to process the requests made by GeoQuiz Mobile and GeoQuiz Web. The current status of the server supports the following actions:
+The server is responsible to process the requests made by GeoQuiz Mobile and GeoQuiz Web. The current status of the server supports the following actions:
 
 i.	Uploading the data from GeoQuiz Web form to PostgreSQL Database.
 ii.	Downloading the data created by GeoQuiz Web and upload them to GeoQuiz Mobile.
 iii.	Upload the data regarding users’ answers to the database.
 
-•	Two PhoneGap servers. Both GeoQuiz Mobile and GeoQuiz Web are deployed as PhoneGap applications, therefore one PhoneGap server runs for each application. To facilitate the communication between Web and Mobile, all three servers must operate.
-
 The database responsible to store information is open-source database PostgreSQL with the PostGIS extension to enable spatial functionality. For the purposes of this application, two tables are created:
 
 i.	Formdata: Stores information about the question, possible answers, solution and coordinates of the PoIs
 ii.	Answers: Stores information about user’s answer, solution and device id number.
-
-User must use a UCL VPN connection in order to run GeoQuiz application successfully. Further information in section 3.4: Connectivity.
 
 2.4.	Overview of the code
 
@@ -250,15 +261,73 @@ ii.	Leaflet API (v. 1.3.0): This API is responsible to call the mapping backgrou
 The debugging methods implemented for the development of GeoQuiz application are:
 
 i.	Try/Catch: mostly used when making a request to the server, to process a potential error message.
-ii.	Utilizing console.log, known as “Brute Force Debugging” (Ellul, 2018): a particularly useful command to check intermediate results of the code and understand where the process works smoothly and where it fails. The generated code has plenty of console log messages since they are very useful to monitor and understand the code in case of an upgrade. 
+ii.	Utilizing console.log, known as “Brute Force Debugging”: a particularly useful command to check intermediate results of the code and understand where the process works smoothly and where it fails. The generated code has plenty of console log messages since they are very useful to monitor and understand the code in case of an upgrade. 
 iii.	Utilizing browser debugging tools: In combination with console log, when running the code, the console option in the browsers provides great assistance to make the code work functionally.
 iv.	Server-side debugging: a similar concept with console log placed in multiple positions, with the difference that the message appears on the terminal window. It is helpful to understand which parts work properly and where the code has an error.
 v.	Applying the code in the browser console: particularly useful to understand for instance the elements and properties of an object.
-vi.	Another tool utilized for debugging, mostly for typing errors is JS Hint (JS Hint).
+vi.	Another tool utilized for debugging, mostly for typing errors is JS Hint (http://jshint.com).
+vii.	Connecting the phone with the browser as demonstrated below.
+
+ 
+2.6.1.	GeoQuiz Mobile
+
+Figure 1 presents the successful automatic load of PoIs.
+
+ 
+Figure 1: Phone-Browser Debugging: Successful load of PoIs
+Figure 2 presents the successful load of the menu bar.
+
+ 
+Figure 2: Phone-Browser Debugging: Successful load of Menu Bar
 
 
-Testing & Implementation
 
+
+
+
+Figure 3 presents the successful geolocation of the user’s position. Console log debugging is also demonstrated on the upper right side of the browser.
+
+ 
+Figure 3:  Phone-Browser Debugging: Successful track of user's location
+Figure 4 presents the beginning of the quiz. The minimum distance is more than 100 meters; therefore, an alert shows on the phone informing the user that is too far from UCL campus.
+
+ 
+Figure 4: Phone-Browser Debugging: Successful start of the quiz
+
+
+Figure 5 presents the incorporated User Guide of GeoQuiz Mobile.
+
+ 
+Figure 5: Phone-Browser Debugging: Successful load of User Guide
+2.6.2.	GeoQuiz Web
+
+Figure 6 presents the successful load of the map and the menu bar.
+
+ 
+Figure 6: Console-Browser Debugging: Successful load of the map and the menu bar
+
+
+
+Figure 7 presents the successful browsing of the form.	
+
+ 
+Figure 7:Console-Browser Debugging: Successful browsing of the form
+Figure 8 presents the successful incorporation of the User Guide for the GeoQuizWeb.
+
+ 
+Figure 8: Console-Browser Debugging: Successful load of the User Guide
+
+
+
+2.6.3.	Server
+
+Figure 9 presents an example of a successful load of PoIs from the server side.
+
+ 
+Figure 9: Terminal-Server Debugging: Successful "get" request of PoIs
+2.7.	Testing & Implementation
+
+In terms of testing, GeoQuiz Mobile is tested on all four PoIs by physically walking around and activating the application, returning the expected results. Similarly, GeoQuiz is tested by creating those PoIs using the relevant form. Lastly, server is tested by the capability of GeoQuiz Mobile to receive the selected PoIs and the by checking the population of PostgreSQL database with PoI data and user data.
  
 3.	Dependencies
 
@@ -283,10 +352,6 @@ Source: https://leafletjs.com/reference-1.3.0.html
 3.3.	Interface
 
 GeoQuiz application utilizes the Material Design template (https://getmdl.io/templates/index.html).
-
-3.4.	Connectivity
-
-In order for the GeoQuiz Web and Mobile to successfully executed, the user must be in UCL’s network using the recommended VPN as instructed by UCL: http://www.ucl.ac.uk/isd/services/get-connected/remote-working/vpn 
 4.	Constraints
 
 GeoQuiz Application is developed to meet the requirements of “Web & Mobile GIS – Apps & Programming” module as part of the MSc. GIS at UCL. Therefore, there are limitations in terms of available time and deadlines to develop the app as well as of the basic functionality that is required for the app to work properly.
