@@ -411,3 +411,15 @@ GeoQuiz application utilizes the Material Design template (https://getmdl.io/tem
 
 GeoQuiz Application is developed to meet the requirements of “Web & Mobile GIS – Apps & Programming” module as part of the MSc. GIS at UCL. Therefore, there are limitations in terms of available time and deadlines to develop the app as well as of the basic functionality that is required for the app to work properly.
 
+
+**5.	REFERENCES**
+
+Google Maps Platform. URL: https://developers.google.com/maps/documentation/javascript/examples/map-geolocation . Accessed on 07/05/2018.
+
+JS Hint. URL: http://jshint.com . Accessed on 07/05/2018.
+
+Leaflet. URL: https://leafletjs.com . Accessed on 07/05/2018.
+
+Material Design. URL: https://getmdl.io/templates/index.html . Accessed on 07/05/2018.
+
+PhoneGap. URL: https://phonegap.com . Accessed on 07/05/2018.
