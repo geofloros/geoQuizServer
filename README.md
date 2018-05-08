@@ -1,10 +1,7 @@
+**TECHNICAL DOCUMENTATION FOR THE GEOQUIZ APPLICATION**
 
 
-
-TECHNICAL DOCUMENTATION FOR THE GEOQUIZ APPLICATION
-
-
-Latest update: May 2018
+**Latest update:** May 2018
 
 
 **CONTENTS**
@@ -94,7 +91,7 @@ The information of the form is stored in the database via the server and applied
 
 Essentially, GeoQuiz Web is responsible to upload data from the web-application to the server and eventually to the GeoQuiz Mobile, facilitating regular update and enrichment of the mobile application. 
 
-1.3.	Features of the application
+**1.3.	Features of the application**
 
 **GeoQuiz Mobile**		
 
@@ -262,31 +259,31 @@ vii.	Connecting the phone with the browser as demonstrated below.
 2.6.1.	GeoQuiz Mobile
 
 
-Figure 1 presents the successful automatic load of PoIs.
+Figure 1 presents the automatic load of PoIs.
 
 
 ![2018-05-08 1 34 28](https://user-images.githubusercontent.com/35569997/39757522-003923ba-52c5-11e8-82f0-d8c4ba570bbe.jpg)
 
 
-Figure 1: Phone-Browser Debugging: Successful load of PoIs
+Figure 1: Phone-Browser Debugging: Load of PoIs
 
 
-Figure 2 presents the successful load of the menu bar.
+Figure 2 presents the load of the menu bar.
 
 
 ![2018-05-08 1 39 04](https://user-images.githubusercontent.com/35569997/39757613-4d3c2b26-52c5-11e8-951b-a0d5a495e9e2.jpg) 
 
 
-Figure 2: Phone-Browser Debugging: Successful load of Menu Bar
+Figure 2: Phone-Browser Debugging: Load of Menu Bar
 
 
-Figure 3 presents the successful geolocation of the user’s position. Console log debugging is also demonstrated on the upper right side of the browser.
+Figure 3 presents the geolocation of the user’s position. Console log debugging is also demonstrated on the upper right side of the browser.
 
 
 ![2018-05-08 1 40 31](https://user-images.githubusercontent.com/35569997/39757656-7551901a-52c5-11e8-91c5-149664748351.jpg)
  
 
-Figure 3:  Phone-Browser Debugging: Successful track of user's location
+Figure 3:  Phone-Browser Debugging: Track of user's location
 
 
 Figure 4 presents the beginning of the quiz. The minimum distance is more than 100 meters; therefore, an alert shows on the phone informing the user that is too far from UCL campus.
@@ -295,7 +292,7 @@ Figure 4 presents the beginning of the quiz. The minimum distance is more than 1
 ![2018-05-08 1 41 33](https://user-images.githubusercontent.com/35569997/39757701-9cb08c1a-52c5-11e8-8082-cb4b6476434e.jpg)
 
 
-Figure 4: Phone-Browser Debugging: Successful start of the quiz
+Figure 4: Phone-Browser Debugging: Starting the quiz
 
 
 Figure 5 presents the incorporated User Guide of GeoQuiz Mobile.
@@ -304,52 +301,52 @@ Figure 5 presents the incorporated User Guide of GeoQuiz Mobile.
 ![2018-05-08 1 42 43](https://user-images.githubusercontent.com/35569997/39757774-c66a7a16-52c5-11e8-88bb-741efa76ce64.jpg)
 
 
-Figure 5: Phone-Browser Debugging: Successful load of User Guide
+Figure 5: Phone-Browser Debugging: Load of User Guide
 
 
 2.6.2.	GeoQuiz Web
 
 
-Figure 6 presents the successful load of the map and the menu bar.
+Figure 6 presents the load of the map and the menu bar.
 
 
 ![2018-05-08 1 44 26](https://user-images.githubusercontent.com/35569997/39757869-0770b37c-52c6-11e8-9af6-3a17c5c7df1d.jpg)
 
 
-Figure 6: Console-Browser Debugging: Successful load of the map and the menu bar
+Figure 6: Console-Browser Debugging: Load of the map and the menu bar
 
 
-Figure 7 presents the successful browsing of the form.	
+Figure 7 presents the browsing of the form.	
 
 
 ![2018-05-08 1 45 48](https://user-images.githubusercontent.com/35569997/39757911-3395b880-52c6-11e8-8ff5-5030d2437039.jpg)
 
 
-Figure 7:Console-Browser Debugging: Successful browsing of the form
+Figure 7:Console-Browser Debugging: Browsing the form
 
 
-Figure 8 presents the successful incorporation of the User Guide for the GeoQuizWeb.
+Figure 8 presents the incorporated User Guide for the GeoQuizWeb.
 
 
 ![2018-05-08 1 46 58](https://user-images.githubusercontent.com/35569997/39757954-5d6ebbd4-52c6-11e8-93fc-74ac623b0fc0.jpg)
 
 
-Figure 8: Console-Browser Debugging: Successful load of the User Guide
+Figure 8: Console-Browser Debugging: Load of the User Guide
 
 
 2.6.3.	Server
 
 
-Figure 9 presents an example of a successful load of PoIs from the server side.
+Figure 9 presents an example of a load of PoIs from the server side.
 
 
 ![2018-05-08 1 48 08](https://user-images.githubusercontent.com/35569997/39758010-8a0723fc-52c6-11e8-9f33-1b7752846cfd.jpg)
 
  
-Figure 9: Terminal-Server Debugging: Successful "get" request of PoIs
+Figure 9: Terminal-Server Debugging: "Get" request of PoIs
 
 
-2.7.	Testing & Implementation
+**2.7.	Testing & Implementation**
 
 In terms of testing, GeoQuiz Mobile is tested on all four PoIs by physically walking around and activating the application, returning the expected results. Similarly, GeoQuiz is tested by creating those PoIs using the relevant form. Lastly, server is tested by the capability of GeoQuiz Mobile to receive the selected PoIs and the by checking the population of PostgreSQL database with PoI data and user data.
 
