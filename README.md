@@ -323,22 +323,32 @@ In terms of testing, GeoQuiz Mobile is tested on all four PoIs by physically wal
 
 Geolocation API:
 
-Method				Description				Properties
 
-getCurrentPosition()	This method returns user’s position	Coords.latitude, coords.longitude
-	Source: https://www.w3schools.com/html/html5_geolocation.asp 
+getCurrentPosition(): This method returns user’s position	
+
+Properties: Coords.latitude, coords.longitude
+
+Source: https://www.w3schools.com/html/html5_geolocation.asp 
 
 
 Leaflet API
 
-Method					Description				Properties
 
-L.map			This method creates a map and manipulates it.		setView
+L.map: This method creates a map and manipulates it.
 
-L.marker	This method creates the point that represents user’s location	toGeoJSON,bindPopup
+Properties: setView
 
-L.tileLayer	This method loads and displays tile layers in the map		maxZoom, attribution
-	Source: https://leafletjs.com/reference-1.3.0.html 
+
+L.marker: This method creates the point that represents user’s location.	
+
+Properties: toGeoJSON,bindPopup
+
+L.tileLayer	This method loads and displays tile layers in the map.		
+
+
+Properties: maxZoom, attribution
+
+Source: https://leafletjs.com/reference-1.3.0.html 
 
 
 **3.2.	Interface**
