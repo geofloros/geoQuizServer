@@ -170,7 +170,9 @@ iv.	PostgreSQL Database (with PostGIS extension): The database responsible to st
 
 **2.2.	Supported Platforms & Operating System Versions**
 
-GeoQuiz is built via PhoneGap and currently supports Android smartphones that their system version is 6.1.2 or more. For detailed information about PhoneGap and supported operating system versions follow this link: https://build.phonegap.com/current-support .
+GeoQuiz Mobile is built via PhoneGap and currently supports Android smartphones that their system version is 6.1.2 or more. For detailed information about PhoneGap and supported operating system versions follow this link: https://build.phonegap.com/current-support .
+
+GeoQuiz Web is built via PhoneGap and it has been tested on Google Chrome (v.46-0-2490-86) and Safari (11.1).
 
 **2.3.	Services, Servers & Databases**
 
