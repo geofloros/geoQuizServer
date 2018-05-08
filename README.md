@@ -50,11 +50,9 @@ Latest update: May 2018
 		
 **3.	DEPENDENCIES**
 		
-	3.1.	API DOCUMENTATION
-			
-	3.2.	LEAFLET API:	
+	3.1.	API DOCUMENTATION	
 		
-	3.3.	INTERFACE	
+	3.2.	INTERFACE	
 
 **4.	CONSTRAINTS**	
 
@@ -317,8 +315,9 @@ Figure 9: Terminal-Server Debugging: Successful "get" request of PoIs
 2.7.	Testing & Implementation
 
 In terms of testing, GeoQuiz Mobile is tested on all four PoIs by physically walking around and activating the application, returning the expected results. Similarly, GeoQuiz is tested by creating those PoIs using the relevant form. Lastly, server is tested by the capability of GeoQuiz Mobile to receive the selected PoIs and the by checking the population of PostgreSQL database with PoI data and user data.
- 
-**3.	DEPENDENCIES**
+
+
+**3.	DEPENDENCIES **
 
 **3.1.	API Documentation **
 
