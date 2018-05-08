@@ -327,7 +327,7 @@ In terms of testing, GeoQuiz Mobile is tested on all four PoIs by physically wal
 **3.1.	API Documentation**
 
 
-**3.1.1 Geolocation API**
+3.1.1 Geolocation API
 
 
 **getCurrentPosition():** This method returns user’s position.	
@@ -337,7 +337,7 @@ Properties: Coords.latitude, coords.longitude
 Source: https://www.w3schools.com/html/html5_geolocation.asp 
 
 
-**3.1.2 Leaflet API**
+3.1.2 Leaflet API
 
 
 **L.map:** This method creates a map and manipulates it.
