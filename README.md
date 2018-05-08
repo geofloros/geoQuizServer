@@ -158,12 +158,20 @@ The system can currently support the implementation of additional PoIs without a
 
 **2.1.	System Architecture**
 
+
 GeoQuiz Application is based on 3-tier architecture (Client-Server-Database) and includes the following components:
 
 i.	GeoQuiz Mobile: The mobile application which is downloaded by the user.
-ii.	GeoQuiz Web: The web browser-based application responsible to source the mobile application with additional or updated information and is managed by the administrator/developer
+
+
+ii.	GeoQuiz Web: The web browser-based application responsible to source the mobile application with additional or updated information and is managed by the administrator/developer.
+
+
 iii.	Server: The server code responsible to handle requests from GeoQuiz Web and Mobile application, as well as upload/download data to/from PostgreSQL database.
+
+
 iv.	PostgreSQL Database (with PostGIS extension): The database responsible to store information that are necessary to implement the quiz.
+
 
 **2.2.	Supported Platforms & Operating System Versions**
 
@@ -176,13 +184,21 @@ GeoQuiz is deployed as a mobile application utilizing PhoneGap services (https:/
 The server is responsible to process the requests made by GeoQuiz Mobile and GeoQuiz Web. The current status of the server supports the following actions:
 
 i.	Uploading the data from GeoQuiz Web form to PostgreSQL Database.
+
+
 ii.	Downloading the data created by GeoQuiz Web and upload them to GeoQuiz Mobile.
+
+
 iii.	Upload the data regarding users’ answers to the database.
+
 
 The database responsible to store information is open-source database PostgreSQL with the PostGIS extension to enable spatial functionality. For the purposes of this application, two tables are created:
 
-i.	Formdata: Stores information about the question, possible answers, solution and coordinates of the PoIs
+i.	Formdata: Stores information about the question, possible answers, solution and coordinates of the PoIs.
+
+
 ii.	Answers: Stores information about user’s answer, solution and device id number.
+
 
 **2.4.	Overview of the code**
 
