@@ -4,49 +4,7 @@
 TECHNICAL DOCUMENTATION FOR THE GEOQUIZ APPLICATION
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Developed By:
-
-Georgios Floros
-
-
-
-
-
-
-
-
-
-
-
-University College London
-
-
-
-
-May 2018
+Latest update: May 2018
  
 CONTENTS
 1.	BUSINESS REQUIREMENTS	3
