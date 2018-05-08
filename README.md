@@ -83,9 +83,16 @@ i.	GeoQuiz Mobile: The main purpose of this application is to implement the quiz
 ii.	GeoQuiz Web: The main purpose of this browser-based application is to provide the administrator with tools to maintain and enrich the GeoQuiz mobile application. Specifically, the background is provided by Leaflet API, similarly with GeoQuiz Mobile and is centered around UCL Campus. The administrator is able to navigate over the map and select a UCL Building in order to add a relevant question, since by clicking on the point, its coordinates are automatically returned. Afterwards, the administrator can fill a form which contains the following information:
 
 a.	Question: The question that refers to the selected building.
+
+
 b.	Option A,B,C,D: Four different answers.
+
+
 c.	Solution: The correct answer of the question.
+
+
 d.	Longitude/Latitude: The coordinates of the selected point as they appear on the map.
+
 
 The information of the form is stored in the database via the server and applied in GeoQuiz Mobile. The current status of the system does not support the alteration of existing questions and PoIs. The interface is based on Google’s Material Design template.
 
