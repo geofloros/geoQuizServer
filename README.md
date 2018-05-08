@@ -7,10 +7,10 @@ TECHNICAL DOCUMENTATION FOR THE GEOQUIZ APPLICATION
 Latest update: May 2018
 
 
-CONTENTS
+**CONTENTS**
 
 
-1.	BUSINESS REQUIREMENTS
+**1.	BUSINESS REQUIREMENTS**
 
 	1.1.	PURPOSE OF THE APPLICATION
 	
@@ -20,7 +20,7 @@ CONTENTS
 	
 	1.4.	CURRENT STATUS & UPDATE CAPABILITIES	
 
-2.	PRODUCT & TECHNICAL REQUIREMENTS	
+**2.	PRODUCT & TECHNICAL REQUIREMENTS**	
 	
 	2.1.	SYSTEM ARCHITECTURE	
 	
@@ -48,7 +48,7 @@ CONTENTS
 	
 	2.7.	TESTING & IMPLEMENTATION	
 		
-3.	DEPENDENCIES	
+**3.	DEPENDENCIES**
 		
 	3.1.	API DOCUMENTATION
 			
@@ -56,23 +56,14 @@ CONTENTS
 		
 	3.3.	INTERFACE	
 
-4.	CONSTRAINTS	
+**4.	CONSTRAINTS**	
 
 
-FIGURES
 
-FIGURE 1: PHONE-BROWSER DEBUGGING: SUCCESSFUL LOAD OF POIS	9
-FIGURE 2: PHONE-BROWSER DEBUGGING: SUCCESSFUL LOAD OF MENU BAR	9
-FIGURE 3:  PHONE-BROWSER DEBUGGING: SUCCESSFUL TRACK OF USER'S LOCATION	10
-FIGURE 4: PHONE-BROWSER DEBUGGING: SUCCESSFUL START OF THE QUIZ	10
-FIGURE 5: PHONE-BROWSER DEBUGGING: SUCCESSFUL LOAD OF USER GUIDE	11
-FIGURE 6: CONSOLE-BROWSER DEBUGGING: SUCCESSFUL LOAD OF THE MAP AND THE MENU BAR	11
-FIGURE 7:CONSOLE-BROWSER DEBUGGING: SUCCESSFUL BROWSING OF THE FORM	12
-FIGURE 8: CONSOLE-BROWSER DEBUGGING: SUCCESSFUL LOAD OF THE USER GUIDE	12
-FIGURE 9: TERMINAL-SERVER DEBUGGING: SUCCESSFUL "GET" REQUEST OF POIS	13
 
- 
-1.	Business Requirements
+
+
+**1.	Business Requirements**
 
 1.1.	Purpose of the application
 
@@ -97,7 +88,7 @@ Essentially, GeoQuiz Web is responsible to upload data from the web-application 
 
 1.3.	Features of the application
 
-GeoQuiz Mobile	GeoQuiz Web	Server
+**GeoQuiz Mobile**		
 
 Starting the App
 
@@ -114,7 +105,9 @@ Response
 •	Selecting and submitting an option
 •	Message regarding result
 •	Upload response, solution and user’s mobile id
-	
+
+**GeoQuiz Web**
+
 Browser
 
 •	Navigating over the map 
@@ -124,11 +117,12 @@ Form
 
 •	Filling information about the question, answers, solution and coordinates
 
-
 Data submission
 
 •	Uploading the form to the database
-	
+
+**Server**
+
 Upload
 
 •	Data from the GeoQuiz Web to the database
@@ -137,13 +131,11 @@ Upload
 
 In order for the user to access the features of the GeoQuiz Application, a Menu-based approach is implemented. Concretely, regarding GeoQuiz Mobile, the User Guide provided with the application simplifies the process in five steps. The user interacts only with the menu button in order to start the geolocation, the quiz and the submission of the answer. As for GeoQuiz Web, the administrator interacts with the map and then selects from the menu the option to fill the form as explained in previous section and upload it to the server.
 
-
-
-
 1.4.	Current Status & Update Capabilities
 
 The system can currently support the implementation of additional PoIs without affecting the results, since control flows are implemented in the code. Update functions can be applied in terms of being able to modify existing questions, improvements in the design of the application and increased flexibility in GeoQuiz Mobile such as starting the quiz without user’s interference.
-2.	Product & Technical Requirements
+
+**2.	Product & Technical Requirements**
 
 2.1.	System Architecture
 
@@ -177,41 +169,41 @@ ii.	Answers: Stores information about user’s answer, solution and device id nu
 
 2.4.1.	GeoQuiz Mobile
 
-Interface (index.html & userform.html)
+*Interface (index.html & userform.html)*
 
 The code for GeoQuiz Mobile is presented in Appendix I. GeoQuiz Mobile is structured according to Google’s Material Design template and deployed as a mobile application via PhoneGap. Geolocation services can be turned on and off from the menu, as well as starting the quiz.
 
-Geolocation (location.js & map.js)
+*Geolocation (location.js & map.js)*
 
 Firstly, the background map is created utilizing the Leaflet API and is centered around UCL campus. Then, in order to track user’s location, the Georefence API is applied and an interval to update position every 15 seconds is set. This interval can also be removed, enabling the stop of geolocation. The user’s position is inserted into the Leaflet Map.
 
-Getting PoIs (getdata.js)
+*Getting PoIs (getdata.js)*
 
 A request is made to the server to download the PoIs created by GeoQuiz Web. The downloaded data are parsed as GeoJSON to enhance process flexibility and inserted into the map.
 
-Distance calculation & Proximity Alert (location.js)
+*Distance calculation & Proximity Alert (location.js)*
 
 A single method is responsible to calculate the distances between the current position of the user and the PoIs. In case the user is within the range of at least one PoI (100 meters) a question pop. In case the user is in range of more than one PoIs, the question that is attributed to the closest PoI pops. Otherwise, the user is informed that he/she is too far to play the game. The distance calculation is performed using control flow, so the addition of more PoIs can be supported by the current structure. The question is dynamically updated, using an AJAX request and utilizing the index of the PoI with the minimum distance to associate it with the corresponding question.
 
-Answer Upload (location.js)
+*Answer Upload (location.js)*
 
 The answers are stored and uploaded to the server using a single method. The method iterates through the answers of the user to find which one is selected and compare it with the correct solution. According to the result, the user is alerted with a message regarding the validity of the answer and the information is uploaded to the server. Similarly, the system utilizes control flow techniques, so it can process the question for added PoIs. It does not support at the moment, the implementation of additional potential answers to the question. Also, the system can be “tricked”, since it is possible to check and submit more than one answers simultaneously.
 
-Marker customization (leaflet-awesome-markers.js)
+*Marker customization (leaflet-awesome-markers.js)*
 
 In order to render distinct user’s position and the position of PoIs, user’s marker appears red to the map. For this purpose, predefined methods by Leaflet are utilized.
 
 2.4.2.	GeoQuiz Web
 
-Interface (index.html & form.html)
+*Interface (index.html & form.html)*
 
 The code for GeoQuiz Mobile is presented in Appendix II. GeoQuiz Web is structured structured according to Google’s Material Design template and deployed as a browser application via PhoneGap. Whenever the administrator locates a PoI, via the menu options a form appears in order to store the required information.
 
-Map Navigation (map.js)
+*Map Navigation (map.js)*
 
 The mapping background centered around UCL campus is called utilizing Leaflet’s API and selecting the relevant tile layer. A method facilitates the retrieval of information when the administrator clicks on a point on the map.
 
-Data Upload (data upload.js)
+*Data Upload (data upload.js)*
 
 A function creates a string of the values that need to be uploaded to the database via the server. Another function makes a request to the server to “post” the data in the database and send an alert to the administrator whether the data have been successfully uploaded or not.
 
@@ -219,18 +211,17 @@ A function creates a string of the values that need to be uploaded to the databa
 
 The code for the server is presented in Appendix III. The server is connected with PostgreSQL database and its parameters are created.
 
-PoI download
+*PoI download*
 
 A “get” method is responsible to respond to the request of the GeoQuiz Mobile and deploy the PoI data. 
 
-Form upload
+*Form upload*
 
 A “post” method is responsible to facilitate the request of uploading the data generated in GeoQuiz Web to PostgreSQL database.
 
-Answer upload
+*Answer upload*
 
 A “post” method is responsible to facilitate the request of uploading users’ answers, the solution and the device id of GeoQuiz Mobile to PostgreSQL database.
-
 
 2.5.	Application Programming Interface (API)
 
@@ -283,6 +274,7 @@ Figure 5 presents the incorporated User Guide of GeoQuiz Mobile.
 
  
 Figure 5: Phone-Browser Debugging: Successful load of User Guide
+
 2.6.2.	GeoQuiz Web
 
 Figure 6 presents the successful load of the map and the menu bar.
@@ -313,7 +305,7 @@ Figure 9: Terminal-Server Debugging: Successful "get" request of PoIs
 
 In terms of testing, GeoQuiz Mobile is tested on all four PoIs by physically walking around and activating the application, returning the expected results. Similarly, GeoQuiz is tested by creating those PoIs using the relevant form. Lastly, server is tested by the capability of GeoQuiz Mobile to receive the selected PoIs and the by checking the population of PostgreSQL database with PoI data and user data.
  
-3.	Dependencies
+**3.	Dependencies**
 
 3.1.	API Documentation 
 
@@ -336,7 +328,8 @@ Source: https://leafletjs.com/reference-1.3.0.html
 3.3.	Interface
 
 GeoQuiz application utilizes the Material Design template (https://getmdl.io/templates/index.html).
-4.	Constraints
+
+**4.	Constraints**
 
 GeoQuiz Application is developed to meet the requirements of “Web & Mobile GIS – Apps & Programming” module as part of the MSc. GIS at UCL. Therefore, there are limitations in terms of available time and deadlines to develop the app as well as of the basic functionality that is required for the app to work properly.
 
