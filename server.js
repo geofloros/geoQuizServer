@@ -94,8 +94,7 @@ app.get('/getPOI', function (req,res) {
 });
 //This is how to upload the form of the web question app
 app.post('/upload',function(req,res){
-       // note that we are using POST here as we are uploading data
-       // so the parameters form part of the BODY of the request rather than the
+//A post command is used to upload the data
       console.dir(req.body);
       res.send(req.body);
     
