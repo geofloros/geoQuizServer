@@ -88,7 +88,7 @@ d.	Longitude/Latitude: The coordinates of the selected point as they appear on t
 
 The app can be accessed via: http://developer.cege.ucl.ac.uk:31301 
 
-IMPORTANT: In order for the GeoQuiz App to run succesfully the user should two the following steps:
+**IMPORTANT:** In order for the GeoQuiz App to run succesfully the user should two the following steps:
 
 (i)Open terminal and type **node server.js** to start the server. This is essential whether GeoQuizMob or GeoQuizWeb is executed.
 (ii)Open a 2nd terminal, type **sudo su** to log in as a super user (requires psw), navigate to geoQuizWeb directory, in **ucesggf** file and type **phonegap serve**. Then, enter the aforementioned link and perform the desired tasks.
