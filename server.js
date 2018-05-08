@@ -147,7 +147,6 @@ app.post('/location', function(req,res){
 });
 
 //Source: (Source: Ellul, 2018: Practical 5: AJAX and Servers)
-	// the / indicates the path that you type into the server - in this case, what happens when you type in:  http://developer.cege.ucl.ac.uk:32560/xxxxx/xxxxx
 app.get('/:name1', function (req, res) {
   // run some server-side code
   // the console is the command line of your server - you will see the console.log values in the terminal window
