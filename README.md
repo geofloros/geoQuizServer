@@ -88,10 +88,15 @@ d.	Longitude/Latitude: The coordinates of the selected point as they appear on t
 
 The app can be accessed via: http://developer.cege.ucl.ac.uk:31301 
 
+IMPORTANT: In order for the GeoQuiz App to run succesfully the user should two the following steps:
+
+(i)Open terminal and type **node server.js** to start the server. This is essential whether GeoQuizMob or GeoQuizWeb is executed.
+(ii)Open a 2nd terminal, type **sudo su** to log in as a super user (requires psw), navigate to geoQuizWeb directory, in **ucesggf** file and type **phonegap serve**. Then, enter the aforementioned link and perform the desired tasks.
 
 The information of the form is stored in the database via the server and applied in GeoQuiz Mobile. The current status of the system does not support the alteration of existing questions and PoIs. The interface is based on Google’s Material Design template.
 
 Essentially, GeoQuiz Web is responsible to upload data from the web-application to the server and eventually to the GeoQuiz Mobile, facilitating regular update and enrichment of the mobile application. 
+
 
 **1.3.	Features of the application**
 
