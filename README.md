@@ -317,33 +317,34 @@ Figure 9: Terminal-Server Debugging: Successful "get" request of PoIs
 In terms of testing, GeoQuiz Mobile is tested on all four PoIs by physically walking around and activating the application, returning the expected results. Similarly, GeoQuiz is tested by creating those PoIs using the relevant form. Lastly, server is tested by the capability of GeoQuiz Mobile to receive the selected PoIs and the by checking the population of PostgreSQL database with PoI data and user data.
 
 
-**3.	DEPENDENCIES **
-
-**3.1.	API Documentation **
-
-Geolocation API:
+**3.	DEPENDENCIES**
 
 
-getCurrentPosition(): This method returns user’s position	
+**3.1.	API Documentation**
+
+**Geolocation API**
+
+
+**getCurrentPosition():** This method returns user’s position	
 
 Properties: Coords.latitude, coords.longitude
 
 Source: https://www.w3schools.com/html/html5_geolocation.asp 
 
 
-Leaflet API
+**Leaflet API**
 
 
-L.map: This method creates a map and manipulates it.
+**L.map:** This method creates a map and manipulates it.
 
 Properties: setView
 
 
-L.marker: This method creates the point that represents user’s location.	
+**L.marker:** This method creates the point that represents user’s location.	
 
 Properties: toGeoJSON,bindPopup
 
-L.tileLayer	This method loads and displays tile layers in the map.		
+**L.tileLayer:** This method loads and displays tile layers in the map.		
 
 
 Properties: maxZoom, attribution
