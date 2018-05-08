@@ -63,13 +63,19 @@ Latest update: May 2018
 
 
 
-**1.	Business Requirements**
 
-1.1.	Purpose of the application
+
+
+
+
+
+**1.	BUSINESS REQUIREMENTS**
+
+**1.1.	Purpose of the application**
 
 GeoQuiz is a location-based quiz application designed to set riddles regarding University College London (UCL) historicity and is developed for the requirements of “Web & Mobile GIS – Apps & Programming” module in MSc. GIS at UCL.
 
-1.2.	Basic Functionality
+**1.2.	Basic Functionality**
 
 GeoQuiz functionality is based on three (3) elemental parts: 
 
@@ -93,17 +99,21 @@ Essentially, GeoQuiz Web is responsible to upload data from the web-application 
 Starting the App
 
 •	Loading PoIs from the database
+
 •	Starting Geolocation
 
 Quiz
 
 •	Checking the location compared to the PoIs
+
 •	Showing the question
 
 Response
 
 •	Selecting and submitting an option
+
 •	Message regarding result
+
 •	Upload response, solution and user’s mobile id
 
 **GeoQuiz Web**
@@ -111,6 +121,7 @@ Response
 Browser
 
 •	Navigating over the map 
+
 •	Selecting PoI and acquire its coordinates
 
 Form
@@ -126,18 +137,20 @@ Data submission
 Upload
 
 •	Data from the GeoQuiz Web to the database
+
 •	Users’ answers from the GeoQuiz Mobile to the database
+
 •	PoIs from the database to GeoQuiz Mobile
 
 In order for the user to access the features of the GeoQuiz Application, a Menu-based approach is implemented. Concretely, regarding GeoQuiz Mobile, the User Guide provided with the application simplifies the process in five steps. The user interacts only with the menu button in order to start the geolocation, the quiz and the submission of the answer. As for GeoQuiz Web, the administrator interacts with the map and then selects from the menu the option to fill the form as explained in previous section and upload it to the server.
 
-1.4.	Current Status & Update Capabilities
+**1.4.	Current Status & Update Capabilities**
 
 The system can currently support the implementation of additional PoIs without affecting the results, since control flows are implemented in the code. Update functions can be applied in terms of being able to modify existing questions, improvements in the design of the application and increased flexibility in GeoQuiz Mobile such as starting the quiz without user’s interference.
 
-**2.	Product & Technical Requirements**
+**2.	PRODUCT & TECHNICAL REQUIREMENTS**
 
-2.1.	System Architecture
+**2.1.	System Architecture**
 
 GeoQuiz Application is based on 3-tier architecture (Client-Server-Database) and includes the following components:
 
@@ -146,11 +159,11 @@ ii.	GeoQuiz Web: The web browser-based application responsible to source the mob
 iii.	Server: The server code responsible to handle requests from GeoQuiz Web and Mobile application, as well as upload/download data to/from PostgreSQL database.
 iv.	PostgreSQL Database (with PostGIS extension): The database responsible to store information that are necessary to implement the quiz.
 
-2.2.	Supported Platforms & Operating System Versions
+**2.2.	Supported Platforms & Operating System Versions**
 
 GeoQuiz is built via PhoneGap and currently supports Android smartphones that their system version is 6.1.2 or more. For detailed information about PhoneGap and supported operating system versions follow this link: https://build.phonegap.com/current-support .
 
-2.3.	Services, Servers & Databases
+**2.3.	Services, Servers & Databases**
 
 GeoQuiz is deployed as a mobile application utilizing PhoneGap services (https://phonegap.com ). The server that is responsible to upload data from the Web application and deploy them in the mobile application is located in UCL. 
 
@@ -165,7 +178,7 @@ The database responsible to store information is open-source database PostgreSQL
 i.	Formdata: Stores information about the question, possible answers, solution and coordinates of the PoIs
 ii.	Answers: Stores information about user’s answer, solution and device id number.
 
-2.4.	Overview of the code
+**2.4.	Overview of the code**
 
 2.4.1.	GeoQuiz Mobile
 
@@ -223,7 +236,7 @@ A “post” method is responsible to facilitate the request of uploading the da
 
 A “post” method is responsible to facilitate the request of uploading users’ answers, the solution and the device id of GeoQuiz Mobile to PostgreSQL database.
 
-2.5.	Application Programming Interface (API)
+**2.5.	Application Programming Interface (API)**
 
 GeoQuiz utilizes two (2) different APIs:
 
@@ -231,7 +244,7 @@ i.	Geolocation API : This API is responsible to track and update the location of
 
 ii.	Leaflet API (v. 1.3.0): This API is responsible to call the mapping background that is utilized in GeoQuiz application. 
 
-2.6.	Debugging
+**2.6.	Debugging**
 
 The debugging methods implemented for the development of GeoQuiz application are:
 
@@ -305,31 +318,35 @@ Figure 9: Terminal-Server Debugging: Successful "get" request of PoIs
 
 In terms of testing, GeoQuiz Mobile is tested on all four PoIs by physically walking around and activating the application, returning the expected results. Similarly, GeoQuiz is tested by creating those PoIs using the relevant form. Lastly, server is tested by the capability of GeoQuiz Mobile to receive the selected PoIs and the by checking the population of PostgreSQL database with PoI data and user data.
  
-**3.	Dependencies**
+**3.	DEPENDENCIES**
 
-3.1.	API Documentation 
+**3.1.	API Documentation **
 
 Geolocation API:
-Method	Description	Properties
+
+Method				Description				Properties
+
 getCurrentPosition()	This method returns user’s position	Coords.latitude, coords.longitude
 	Source: https://www.w3schools.com/html/html5_geolocation.asp 
 
 
-3.2.	Leaflet API:
+Leaflet API
 
-Method	Description	Properties
-L.map	This method creates a map and manipulates it.	setView
-L.marker	This method creates the point that represents user’s location	toGeoJSON,
-bindPopup
-L.tileLayer	This method loads and displays tile layers in the map	maxZoom, attribution
-Source: https://leafletjs.com/reference-1.3.0.html 
+Method					Description				Properties
+
+L.map			This method creates a map and manipulates it.		setView
+
+L.marker	This method creates the point that represents user’s location	toGeoJSON,bindPopup
+
+L.tileLayer	This method loads and displays tile layers in the map		maxZoom, attribution
+	Source: https://leafletjs.com/reference-1.3.0.html 
 
 
-3.3.	Interface
+**3.2.	Interface**
 
 GeoQuiz application utilizes the Material Design template (https://getmdl.io/templates/index.html).
 
-**4.	Constraints**
+**4.	CONSTRAINTS**
 
 GeoQuiz Application is developed to meet the requirements of “Web & Mobile GIS – Apps & Programming” module as part of the MSc. GIS at UCL. Therefore, there are limitations in terms of available time and deadlines to develop the app as well as of the basic functionality that is required for the app to work properly.
 
