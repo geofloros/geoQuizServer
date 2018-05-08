@@ -258,43 +258,60 @@ v.	Applying the code in the browser console: particularly useful to understand f
 vi.	Another tool utilized for debugging, mostly for typing errors is JS Hint (http://jshint.com).
 vii.	Connecting the phone with the browser as demonstrated below.
 
- 
+
 2.6.1.	GeoQuiz Mobile
+
 
 Figure 1 presents the successful automatic load of PoIs.
 
- 
+![2018-05-08 1 34 28](https://user-images.githubusercontent.com/35569997/39757522-003923ba-52c5-11e8-82f0-d8c4ba570bbe.jpg)
+
+
+
 Figure 1: Phone-Browser Debugging: Successful load of PoIs
+
+
+
 Figure 2 presents the successful load of the menu bar.
 
+![1](https://user-images.githubusercontent.com/35569997/39757155-e718dec6-52c3-11e8-8b20-4c5cc8e4656a.jpg)
  
+
 Figure 2: Phone-Browser Debugging: Successful load of Menu Bar
-
-
-
-
 
 
 Figure 3 presents the successful geolocation of the user’s position. Console log debugging is also demonstrated on the upper right side of the browser.
 
- 
-Figure 3:  Phone-Browser Debugging: Successful track of user's location
-Figure 4 presents the beginning of the quiz. The minimum distance is more than 100 meters; therefore, an alert shows on the phone informing the user that is too far from UCL campus.
+![1](https://user-images.githubusercontent.com/35569997/39757215-19c5a4c6-52c4-11e8-9c6f-b38ca3d94b95.jpg)
 
  
+Figure 3:  Phone-Browser Debugging: Successful track of user's location
+
+
+Figure 4 presents the beginning of the quiz. The minimum distance is more than 100 meters; therefore, an alert shows on the phone informing the user that is too far from UCL campus.
+
+![1](https://user-images.githubusercontent.com/35569997/39757252-31d07eb0-52c4-11e8-952e-cd2d4e534491.jpg)
+
+
 Figure 4: Phone-Browser Debugging: Successful start of the quiz
 
 
 Figure 5 presents the incorporated User Guide of GeoQuiz Mobile.
 
- 
+![1](https://user-images.githubusercontent.com/35569997/39757281-47682192-52c4-11e8-9e1c-b7b25d81fffd.jpg)
+
+
 Figure 5: Phone-Browser Debugging: Successful load of User Guide
+
 
 2.6.2.	GeoQuiz Web
 
+
 Figure 6 presents the successful load of the map and the menu bar.
 
- 
+![1](https://user-images.githubusercontent.com/35569997/39757313-606a5ab6-52c4-11e8-9b58-acf20072f9e1.jpg)
+
+
 Figure 6: Console-Browser Debugging: Successful load of the map and the menu bar
 
 
